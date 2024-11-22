@@ -119,10 +119,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: "Jsls-xp/Jsls-xp.github.io" # <gh-username>/<repo>
-    repo_id: "R_kgDONReWAw"
-    category: "Announcements"
-    category_id: "DIC_kwDONReWA84CkgG0"
+    repo: Jsls-xp/Jsls-xp.github.io # <gh-username>/<repo>
+    repo_id: R_kgDONReWAw
+    category: Announcements
+    category_id: DIC_kwDONReWA84CkgG0
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
