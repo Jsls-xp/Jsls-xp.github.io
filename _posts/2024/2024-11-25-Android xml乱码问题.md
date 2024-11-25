@@ -7,19 +7,19 @@ toc: false
 media_subpath : /assets/img/Android-xml乱码/
 ---
 
-# 一、背景：
+## 一、背景：
 Android12高版本以后系统路径下很多的xml都变成了二进制类型，无法直接查看xml的内容具体。
 使用BinaryXmlSerializer最重要原因是：  
 1、可以有更快的速度  
 2、更小的体积
 
-# 二、如何把二进制变成正常可读xml
-## 2.1 修改属性
+## 二、如何把二进制变成正常可读xml
+### 2.1 修改属性S
 改变属性，删除原来的xml重启，重新生成xml
 ```shell
 adb shell setprop persist.sys.binary_xml false
 ```
-##  2.2使用Android系统自带的xml加解密工具，位于 /system/bin下的abx2xml和xml2abx  
+###  2.2 使用Android系统自带的xml加解密工具，位于 /system/bin下的abx2xml和xml2abx  
 ![alt text](image.png)
 ![alt text](image-1.png)  
 
@@ -36,7 +36,7 @@ adb shell abx2xml /data/system/packages.xml /data/system/packages-read.xml
 转换后的packages-read.xml文件内容如下：  
 ![alt text](image-3.png)  
 
-# 三、abx2xml和xml2abx命令解析
+## 三、abx2xml和xml2abx命令解析
 abx2xml和xml2abx其实代码都是一样的，本质就是个sh脚本而已，都是调用到了Abx这个java类 
 
 ```shell
