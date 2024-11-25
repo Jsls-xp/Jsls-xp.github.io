@@ -4,7 +4,7 @@ date: 2024-11-25
 categories: [Android, 杂记]
 tag: [abx2xml, xml2abx]
 toc: false
-media_subpath : /_posts/2024/Android-xml乱码/
+media_subpath : /assets/img/Android-xml乱码/
 ---
 
 # 一、背景：
@@ -21,10 +21,10 @@ adb shell setprop persist.sys.binary_xml false
 ```
 ##  2.2使用Android系统自带的xml加解密工具，位于 /system/bin下的abx2xml和xml2abx  
 ![alt text](image.png)
-![alt text](./Android-xml乱码/image-1.png)  
+![alt text](image-1.png)  
 
 例如/data/system/packages.xml文件直接打开是如下图的乱码状态，需要使用命令转换一下
-![alt text](./Android-xml乱码/image-2.png)  
+![alt text](image-2.png)  
 命令格式为：
 ```shell
 abx2xml [-i] input文件路径 [output文件路径]
@@ -34,7 +34,7 @@ xml2abx [-i] input文件路径 [output文件路径]
 adb shell abx2xml /data/system/packages.xml /data/system/packages-read.xml
 ```
 转换后的packages-read.xml文件内容如下：  
-![alt text](./Android-xml乱码/image-3.png)  
+![alt text](image-3.png)  
 
 # 三、abx2xml和xml2abx命令解析
 abx2xml和xml2abx其实代码都是一样的，本质就是个sh脚本而已，都是调用到了Abx这个java类 
