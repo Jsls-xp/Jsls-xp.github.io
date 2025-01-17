@@ -1,3 +1,11 @@
+---
+title: "Android中的Uid、UserId和AppId"
+date: 2025-01-17
+categories: [Android, 杂记]
+tag: [Uid, UserId, AppId]
+toc: false
+---
+
 ## 一、Linux中概念
 ### 1.1 Uid
 Linux 是一个多用户操作系统，系统中可以同时存在有多个用户。每个用户有一个用户名，也就是登录时输入的的用户名。用户名在系统中会对应一个整数值 UID，是用户在系统中的唯一标识。
@@ -9,7 +17,7 @@ Linux 是一个多用户操作系统，系统中可以同时存在有多个用�
 系统在程序运行时，会为每个可执行程序分配一个唯一的进程ID（PID），PID的直接作用是为了表明该程序所拥有的文件操作权限，不同的可执行程序运行时互不影响，相互之间的数据访问具有权限限制。
 
 ## 二、Android中的Uid、UserId、AppId
-frameworks/base/core/java/android/os/UserHandle.java提供了计算方法
+frameworks/base/core/java/android/os/UserHandle.java提供了计算方法:
 ```java
 public final class UserHandle implements Parcelable {
     /**
@@ -259,8 +267,8 @@ public static int getUid(@UserIdInt int userId, @AppIdInt int appId) {
 }
 ```
 uid = userId * PER_USER_RANGE + (appId % PER_USER_RANGE)  
-    = userId * 100000 + appId % 100000
-可通过Process.myUid()获取
+&emsp;&ensp; = userId * 100000 + appId % 100000  
+也可通过Process.myUid()直接获取
 
 ### 2.2 通过uid计算userId
 ```java
